@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="change();">
+<h1>Type anything slowly</h1>
+<form>
+    <textarea cols="40" rows="5" id="text"></textarea>
+</form>
+</body>
+<script>
+    let arr = [];
+    let strArr = " Tôi thật ngốc!";
+    arr = strArr.split('');
+    let str = "";
+    function change() {
+        let text = document.getElementById("text").value;
+        for(let i = 1; i<=text.length;i++){
+            str += arr[i];
+            if(i === strArr.length){
+                str = "";
+            }
+        }
+        document.getElementById("text").value = str;
+        str = "";
+        setTimeout(change, 1);
+    }
+</script>
+</html>
